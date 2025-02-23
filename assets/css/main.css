@@ -164,11 +164,11 @@ h6 {
 --------------------------------------------------------------*/
 
 .header {
-  --background-color: #bf92e4;
+  --background-color: #a457ca;
   --heading-color: #ffffff;
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 15px 0;
+  padding: 8px 0;
   transition: all 0.5s;
   z-index: 997;
 }
@@ -197,7 +197,10 @@ h6 {
 ------------------------------*/
 
 .scrolled .header {
-  --background-color: #9370db;
+  --background-color: #5a3e91;
+}
+.why-us{
+  margin-bottom: 30px;
 }
 
 /*--------------------------------------------------------------
@@ -207,6 +210,9 @@ h6 {
 /* Navmenu - Desktop */
 
 @media (min-width: 1200px) {
+  .why-us{
+    height: 480px;
+  }
   .navmenu {
     padding: 0;
   }
@@ -677,12 +683,13 @@ section,
 .section {
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 30px 0;
-  scroll-margin-top: 100px;
+  /* padding: 30px 0; */
+  /* scroll-margin-top: 100px; */
   overflow: clip;
 }
 
 @media (max-width: 1199px) {
+
   section,
   .section {
     scroll-margin-top: 66px;
@@ -727,15 +734,17 @@ section,
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-
+section{
+  margin-top: 20px;
+}
 .hero {
   width: 100%;
-  min-height: 100vh;
+  height: 80vh;
   position: relative;
-  padding: 120px 0 60px;
   display: flex;
   align-items: center;
 }
+
 
 @media (min-width: 1200px) {
   .hero:after {
@@ -780,8 +789,9 @@ section,
 
 .hero h1 {
   margin: 0;
-  font-size: 3rem;
+  font-size: 2.2rem;
   font-weight: 700;
+  margin-top: 80px;
 }
 
 .hero blockquote {
@@ -802,6 +812,7 @@ section,
   padding: 12px 30px;
   border-radius: 50px;
   transition: 0.5s;
+  margin-bottom: 20px;
 }
 
 .hero .btn-get-started:hover {
@@ -833,6 +844,9 @@ section,
 }
 
 @media (max-width: 640px) {
+  .navmenu ul{
+    height: 270px;
+  }
   .hero h1 {
     font-size: 28px;
     line-height: 36px;
@@ -841,6 +855,9 @@ section,
   .hero .btn-watch-video {
     font-size: 13px;
   }
+  .hero {
+  height:55vh;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -848,8 +865,9 @@ section,
 --------------------------------------------------------------*/
 
 .why-us .img-bg {
-  min-height: 500px;
+  height: 350px;
   position: relative;
+  margin-top: 75px;
 }
 
 .why-us .img-bg img {
@@ -860,6 +878,7 @@ section,
   height: 100%;
   object-fit: cover;
   z-index: 1;
+  border-radius: 10px;
 }
 
 .why-us .slides {
@@ -1083,6 +1102,7 @@ section,
 
 .features .phone-wrap img {
   width: 340px;
+  border-radius: 10px;
 }
 
 @media (max-width: 992px) {
@@ -1097,8 +1117,10 @@ section,
   }
 }
 
+.features{
+  margin-top: 60px;
+}
 .features .details {
-  margin-top: 80px;
   padding: 120px 0;
   background-color: color-mix(in srgb, var(--default-color), transparent 97%);
 }

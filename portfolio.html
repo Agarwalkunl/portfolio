@@ -45,25 +45,106 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-    <style>
-      #portfolio-flters li.filter-active {
-        color: #47b2e4;
+  <style>
+    #portfolio-flters li.filter-active {
+      color: #47b2e4;
+    }
+    #portfolio-flters {
+      display: flex; /* Use flexbox */
+      justify-content: center; /* Center the items horizontally */
+      align-items: center; /* Center the items vertically */
+      flex-wrap: wrap; /* Allow items to wrap to the next line if needed */
+    }
+  
+    #portfolio-flters li {
+      margin: 0 0.5em; /* Add some horizontal spacing between the buttons */
+      margin-bottom: 0.5em; /* Add some bottom spacing for when they wrap */
+      list-style: none;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+  
+    /* Add hover effect to filter buttons */
+    #portfolio-flters li:hover {
+      color: #7ac5ff; /* Lighter shade on hover */
+    }
+  
+    .portfolio-item .card {
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      overflow: hidden; /* Prevents content from overflowing rounded corners */
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+    }
+  
+    .portfolio-item .card:hover {
+      transform: translateY(-5px); /* Card slightly moves up */
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+  
+    .portfolio-item .card-img-top {
+      height: 220px;
+      object-fit: cover; /* Ensures images fill the space without distortion */
+      transition: transform 0.3s ease; /* Image zoom transition */
+    }
+  
+    .portfolio-item .card:hover .card-img-top {
+      transform: scale(1.05); /* Slight zoom on image hover */
+    }
+  
+    .portfolio-item .card-body {
+      padding: 1.5rem;
+    }
+  
+    .portfolio-item .card-title {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+      color: #333; /* Darker heading */
+    }
+  
+    .portfolio-item .card-text {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 1.25rem;
+    }
+  
+    .portfolio-item .portfolio-links {
+      display: flex;
+      justify-content: flex-end;
+    }
+  
+    .portfolio-item .portfolio-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px; /* Smaller circle */
+      height: 32px; /* Smaller circle */
+      border-radius: 50%;
+      color: #fff;
+      margin-left: 0.5rem;
+      transition: background-color 0.3s ease;
+    }
+  
+    .portfolio-item .portfolio-links a:hover {
+      background-color: #35a0d2; /* Darker blue on hover */
+      color: #fff;
+    }
+  
+    .portfolio-item .portfolio-links i {
+      font-size: 1rem; /* Slightly smaller icon size */
+      display: block;  /* Ensure icon is visible */
+  
+    }
+  
+    /* Mobile spacing for cards */
+    @media (max-width: 767px) {
+      .portfolio-item {
+        margin-bottom: 20px; /* Add space between cards on mobile */
       }
-      #portfolio-flters {
-        display: flex; /* Use flexbox */
-        justify-content: center; /* Center the items horizontally */
-        align-items: center; /* Center the items vertically */
-        flex-wrap: wrap; /* Allow items to wrap to the next line if needed */
-      }
-
-      #portfolio-flters li {
-        margin: 0 0.5em; /* Add some horizontal spacing between the buttons */
-        margin-bottom: 0.5em; /* Add some bottom spacing for when they wrap */
-        list-style: none;
-        cursor: pointer;
-      }
-    </style>
-  </head>
+    }
+  </style>
+    </head>
 
   <body class="portfolio-page">
     <header id="header" class="header d-flex align-items-center fixed-top">
@@ -83,8 +164,8 @@
             </li>
             <li><a href="about.html">About</a></li>
             <li><a href="services.html">Services</a></li>
-            <li><a href="portfolio.html" class="active">Portfolio</a></li>
-            <li><a href="team.html">Team</a></li>
+            <li><a href="portfolio.html" class="active">Work Done</a></li>
+            <!-- <li><a href="team.html">Team</a></li> -->
             <!-- <li><a href="blog.html">Blog</a></li>
                     <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                         <ul>
@@ -118,17 +199,16 @@
         style="background-image: url(assets/img/portfolio-page-title-bg.jpg)"
       >
         <div class="container">
-          <h1>Portfolio</h1>
+          <h1>Work Done</h1>
           <nav class="breadcrumbs">
             <ol>
               <li><a href="index.html">Home</a></li>
-              <li class="current">Portfolio</li>
+              <li class="current">Work Done</li>
             </ol>
           </nav>
         </div>
       </div>
       <!-- End Page Title -->
-
       <!-- Portfolio Section -->
       <section id="portfolio" class="portfolio section">
         <div class="container">
@@ -147,15 +227,17 @@
               class="col-lg-4 col-md-6 portfolio-item filter-app"
               data-aos="fade-up"
             >
-              <div class="portfolio-wrap">
+              <div class="card h-100">
                 <img
                   src="assets/img/portfolio/app1.webp"
-                  class="img-fluid"
+                  class="card-img-top"
                   alt="App 1"
                 />
-                <div class="portfolio-info">
-                  <h4>App 1</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                <div class="card-body">
+                  <h5 class="card-title">App 1</h5>
+                  <p class="card-text">
+                    Lorem ipsum, dolor sit amet consectetur
+                  </p>
                   <div class="portfolio-links">
                     <a
                       href="assets/img/portfolio/app1.webp"
@@ -178,15 +260,17 @@
               data-aos="fade-up"
               data-aos-delay="100"
             >
-              <div class="portfolio-wrap">
+              <div class="card h-100">
                 <img
                   src="assets/img/portfolio/app4.webp"
-                  class="img-fluid"
+                  class="card-img-top"
                   alt="App 2"
                 />
-                <div class="portfolio-info">
-                  <h4>App 2</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                <div class="card-body">
+                  <h5 class="card-title">App 2</h5>
+                  <p class="card-text">
+                    Lorem ipsum, dolor sit amet consectetur
+                  </p>
                   <div class="portfolio-links">
                     <a
                       href="assets/img/portfolio/app4.webp"
@@ -209,15 +293,17 @@
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              <div class="portfolio-wrap">
+              <div class="card h-100">
                 <img
                   src="assets/img/portfolio/app5.jpeg"
-                  class="img-fluid"
+                  class="card-img-top"
                   alt="App 3"
                 />
-                <div class="portfolio-info">
-                  <h4>App 3</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                <div class="card-body">
+                  <h5 class="card-title">App 3</h5>
+                  <p class="card-text">
+                    Lorem ipsum, dolor sit amet consectetur
+                  </p>
                   <div class="portfolio-links">
                     <a
                       href="assets/img/portfolio/app5.jpeg"
@@ -241,18 +327,20 @@
               data-aos="fade-up"
               data-aos-delay="300"
             >
-              <div class="portfolio-wrap">
+              <div class="card h-100">
                 <img
                   src="assets/img/portfolio/website1.jpeg"
-                  class="img-fluid"
+                  class="card-img-top"
                   alt="Website 1"
                 />
-                <div class="portfolio-info">
-                  <h4>Website 1</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                <div class="card-body">
+                  <h5 class="card-title">Website 1</h5>
+                  <p class="card-text">
+                    Lorem ipsum, dolor sit amet consectetur
+                  </p>
                   <div class="portfolio-links">
                     <a
-                      href="assets/img/portfolio/app1.webp"
+                      href="assets/img/portfolio/website1.jpeg"
                       data-gallery="portfolioGallery"
                       class="portfolio-lightbox"
                       title="Website 1"
@@ -272,18 +360,20 @@
               data-aos="fade-up"
               data-aos-delay="400"
             >
-              <div class="portfolio-wrap">
+              <div class="card h-100">
                 <img
                   src="assets/img/portfolio/website2.jpeg"
-                  class="img-fluid"
+                  class="card-img-top"
                   alt="Website 2"
                 />
-                <div class="portfolio-info">
-                  <h4>Website 2</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                <div class="card-body">
+                  <h5 class="card-title">Website 2</h5>
+                  <p class="card-text">
+                    Lorem ipsum, dolor sit amet consectetur
+                  </p>
                   <div class="portfolio-links">
                     <a
-                      href="assets/img/portfolio/app4.webp"
+                      href="assets/img/portfolio/website2.jpeg"
                       data-gallery="portfolioGallery"
                       class="portfolio-lightbox"
                       title="Website 2"
@@ -303,18 +393,20 @@
               data-aos="fade-up"
               data-aos-delay="500"
             >
-              <div class="portfolio-wrap">
+              <div class="card h-100">
                 <img
                   src="assets/img/portfolio/website3.jpeg"
-                  class="img-fluid"
+                  class="card-img-top"
                   alt="Website 3"
                 />
-                <div class="portfolio-info">
-                  <h4>Website 3</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                <div class="card-body">
+                  <h5 class="card-title">Website 3</h5>
+                  <p class="card-text">
+                    Lorem ipsum, dolor sit amet consectetur
+                  </p>
                   <div class="portfolio-links">
                     <a
-                      href="assets/img/portfolio/app5.jpeg"
+                      href="assets/img/portfolio/website3.jpeg"
                       data-gallery="portfolioGallery"
                       class="portfolio-lightbox"
                       title="Website 3"
@@ -359,8 +451,8 @@
                 <li><a href="#">Home</a></li>
                 <li><a href="./about.html">About us</a></li>
                 <li><a href="./services.html">Services</a></li>
-                <li><a href="./portfolio.html">Portfolio</a></li>
-                <li><a href="./team.html">Team</a></li>
+                <li><a href="./portfolio.html">Work Done</a></li>
+                <!-- <li><a href="./team.html">Team</a></li> -->
               </ul>
             </div>
 
