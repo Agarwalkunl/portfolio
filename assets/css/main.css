@@ -199,7 +199,7 @@ h6 {
 .scrolled .header {
   --background-color: #5a3e91;
 }
-.why-us{
+.why-us {
   margin-bottom: 30px;
 }
 
@@ -210,7 +210,7 @@ h6 {
 /* Navmenu - Desktop */
 
 @media (min-width: 1200px) {
-  .why-us{
+  .why-us {
     height: 480px;
   }
   .navmenu {
@@ -689,7 +689,6 @@ section,
 }
 
 @media (max-width: 1199px) {
-
   section,
   .section {
     scroll-margin-top: 66px;
@@ -734,7 +733,7 @@ section,
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-section{
+section {
   margin-top: 20px;
 }
 .hero {
@@ -743,8 +742,8 @@ section{
   position: relative;
   display: flex;
   align-items: center;
+  padding: 200px 0;
 }
-
 
 @media (min-width: 1200px) {
   .hero:after {
@@ -776,10 +775,14 @@ section{
   inset: 0;
   display: block;
   width: 100%;
-  height: 100%;
+  height: 115%;
   object-fit: cover;
+  object-position: center; 
+  clip-path: inset(0 0 10% 0); /* Neeche ka 20% cut karega */
   z-index: 1;
 }
+
+
 
 .hero .container,
 .hero .container-fluid {
@@ -791,14 +794,14 @@ section{
   margin: 0;
   font-size: 2.2rem;
   font-weight: 700;
-  margin-top: 80px;
+  margin-top: 50px;
 }
 
 .hero blockquote {
   color: color-mix(in srgb, var(--default-color), transparent 20%);
   padding-left: 20px;
   border-left: 2px solid var(--accent-color);
-  margin: 40px 0;
+  margin: 20px 0;
 }
 
 .hero .btn-get-started {
@@ -812,7 +815,6 @@ section{
   padding: 12px 30px;
   border-radius: 50px;
   transition: 0.5s;
-  margin-bottom: 20px;
 }
 
 .hero .btn-get-started:hover {
@@ -844,7 +846,7 @@ section{
 }
 
 @media (max-width: 640px) {
-  .navmenu ul{
+  .navmenu ul {
     height: 270px;
   }
   .hero h1 {
@@ -856,7 +858,7 @@ section{
     font-size: 13px;
   }
   .hero {
-  height:55vh;
+    height: 55vh;
   }
 }
 
@@ -867,7 +869,7 @@ section{
 .why-us .img-bg {
   height: 350px;
   position: relative;
-  margin-top: 75px;
+  margin-top: 65px;
 }
 
 .why-us .img-bg img {
@@ -1117,11 +1119,11 @@ section{
   }
 }
 
-.features{
+.features {
   margin-top: 60px;
 }
 .features .details {
-  padding: 120px 0;
+  padding: 40px 0;
   background-color: color-mix(in srgb, var(--default-color), transparent 97%);
 }
 
