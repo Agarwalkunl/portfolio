@@ -16,7 +16,7 @@
   <link href="https://fonts.googleapis.com" rel="preconnect" />
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet" />
 
   <!-- Vendor CSS Files -->
@@ -65,7 +65,7 @@
     }
 
     .portfolio-item .card {
-      border: none;
+      border: solid 0.1px rgba(128, 128, 128, 0.219);
       border-radius: 8px;
       overflow: hidden;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -85,9 +85,12 @@
     }
 
     .portfolio-item .card-img-top {
-      height: 250px; /* Reduced image height */
-      object-fit: cover;
+      height: 250px;
+      /* Reduced image height */
+      width: 100%; /* Make image fill the card width */
+      object-fit: cover; /* Crucial: Ensures the image covers the area without distortion */
       transition: transform 0.4s ease-in-out;
+      border: solid 1px rgb(248, 239, 239);
       cursor: pointer;
     }
 
