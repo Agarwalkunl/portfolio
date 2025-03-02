@@ -25,7 +25,9 @@
   <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
-
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css"
+    integrity="sha512-pVCM5+SN2+qwj36KonHToF2p1oIvoU6uWi9CJkPM/NDzVN+JORpyjEEMnqQH7xg4gZoaaGwKePemylNQv6DKg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" rel="stylesheet" />
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet" />
 
@@ -66,28 +68,29 @@
       border: none;
       border-radius: 8px;
       overflow: hidden;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       display: flex;
       flex-direction: column;
       height: 430px;
+      position: relative;
       /* Fixed height */
     }
 
     .portfolio-item .card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .portfolio-item .card:hover .card-img-top {
+      transform: scale(1.05);
     }
 
     .portfolio-item .card-img-top {
       height: 250px; /* Reduced image height */
       object-fit: cover;
-      transition: transform 0.3s ease;
+      transition: transform 0.4s ease-in-out;
       cursor: pointer;
     }
 
-    .portfolio-item .card:hover .card-img-top {
-      transform: scale(1.03);
-    }
 
     .portfolio-item .card-body {
       padding: 1.25rem;
@@ -112,30 +115,48 @@
     .portfolio-item .portfolio-links {
       display: flex;
       justify-content: flex-end;
-      margin-top: auto; /* Push links to bottom */
+      margin-top: auto;
     }
 
     .portfolio-item .portfolio-links a {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 28px;
-      height: 28px;
+      width: 32px;
+      height: 32px;
       border-radius: 50%;
       color: #fff;
+      background-color: #47b2e4;
       margin-left: 0.4rem;
-      transition: background-color 0.2s ease;
+      transition: all 0.3s ease;
       font-size: 0.9rem;
+      opacity: 0;
+      /* Initially hidden */
+      visibility: hidden;
+      /* Initially hidden */
     }
 
     .portfolio-item .portfolio-links a:hover {
-      background-color: #546e7a;
-      transform: scale(1.05);
+      background-color: #31a9e1;
+      transform: scale(1.1);
+    }
+
+    /* Show the links on card hover with a slight delay */
+    .portfolio-item .card:hover .portfolio-links a {
+      opacity: 1;
+      visibility: visible;
+      transition-delay: 0.1s;
+      /* Staggered appearance */
     }
 
     .portfolio-item .portfolio-links i {
       font-size: 0.9rem;
       display: block;
+    }
+
+    /* Add a subtle glow effect */
+    .portfolio-item .portfolio-links a {
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
     }
 
     @media (max-width: 767px) {
@@ -157,6 +178,29 @@
     h6 {
       font-family: "Montserrat", sans-serif;
       font-weight: 600;
+    }
+
+    .portfolio-item .portfolio-links a:nth-child(1) {
+      transition-delay: 0.2s;
+      /* Delay for the first link */
+    }
+
+    .portfolio-item .portfolio-links a:nth-child(2) {
+      transition-delay: 0.3s;
+      /* Delay for the second link */
+    }
+
+    .portfolio-item .portfolio-links {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      z-index: 2;
+      /* Ensure links are above the image */
+    }
+
+    .portfolio-item .portfolio-links a {
+      margin-left: 0.5rem;
     }
   </style>
 </head>
@@ -226,7 +270,9 @@
                 <div class="portfolio-links">
                   <a href="assets/img/portfolio/app1.webp" data-gallery="portfolioGallery"
                     title="TimeMe - Smarter Scheduling & Seamless Communication" class="portfolio-lightbox"><i
-                      class="bx bx-plus"></i></a>
+                      class='bx bx-plus'></i></a>
+                  <a href="https://play.google.com/store/apps/details?id=com.timeme.parent" target="_blank"><i
+                      class='bx bx-link'></i></a>
                 </div>
               </div>
             </div>
@@ -247,7 +293,9 @@
                 </p>
                 <div class="portfolio-links">
                   <a href="assets/img/portfolio/app4.webp" data-gallery="portfolioGallery" title="TimeMe"
-                    class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                    class="portfolio-lightbox"><i class='bx bx-plus'></i></a>
+                  <a href="https://play.google.com/store/apps/details?id=com.timeme.parent" target="_blank"><i
+                      class='bx bx-link'></i></a>
                 </div>
               </div>
             </div>
@@ -267,7 +315,10 @@
                 </p>
                 <div class="portfolio-links">
                   <a href="assets/img/portfolio/app5.jpeg" data-gallery="portfolioGallery"
-                    title="BitInfy – Smart Crypto Trading" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                    title="BitInfy – Smart Crypto Trading" class="portfolio-lightbox"><i
+                      class='bx bx-plus'></i></a>
+                  <a href="https://play.google.com/store/apps/details?id=com.bitinfy" target="_blank"><i
+                      class='bx bx-link'></i></a>
                 </div>
               </div>
             </div>
@@ -287,7 +338,8 @@
                 </p>
                 <div class="portfolio-links">
                   <a href="assets/img/portfolio/website1.png" data-gallery="portfolioGallery" title="EHS Prints"
-                    class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                    class="portfolio-lightbox"><i class='bx bx-plus'></i></a>
+                  <a href="https://www.ehsprints.com/" target="_blank"><i class='bx bx-link'></i></a>
                 </div>
               </div>
             </div>
@@ -307,7 +359,8 @@
                 </p>
                 <div class="portfolio-links">
                   <a href="assets/img/portfolio/website2.png" data-gallery="portfolioGallery" title="DoctoLink"
-                    class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                    class="portfolio-lightbox"><i class='bx bx-plus'></i></a>
+                  <a href="https://doctolinkapp.com/" target="_blank"><i class='bx bx-link'></i></a>
                 </div>
               </div>
             </div>
@@ -327,7 +380,8 @@
                 </p>
                 <div class="portfolio-links">
                   <a href="assets/img/portfolio/website3.png" data-gallery="portfolioGallery" title="ChannelsFlip"
-                    class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                    class="portfolio-lightbox"><i class='bx bx-plus'></i></a>
+                  <a href="https://selling-channel.onrender.com/" target="_blank"><i class='bx bx-link'></i></a>
                 </div>
               </div>
             </div>
